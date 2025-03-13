@@ -27,19 +27,19 @@ export const users = sequelize.define('users',
             type: DataTypes.STRING(256),
             allowNull: false
         },
-        fist_name:{
+        first_name: {  
             type: DataTypes.STRING(128),
             allowNull: false
         },
-        middle_name:{
+        middle_name: {
             type: DataTypes.STRING(128),
             allowNull: true
         },
-        fist_surname:{
+        first_surname: {  
             type: DataTypes.STRING(128),
             allowNull: false
         },
-        secund_last_name:{
+        second_surname: {  
             type: DataTypes.STRING(128),
             allowNull: true
         },
@@ -47,7 +47,7 @@ export const users = sequelize.define('users',
             type: DataTypes.DATE,
             allowNull: false
         },
-        gener:{
+        gender:{
             type: DataTypes.CHAR(1),
             allowNull: false
         },
