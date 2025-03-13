@@ -6,14 +6,6 @@ import { countries } from './countries.js'
 export const states = sequelize.define(
     'states',
     {
-        fk_countries_states:{
-            type: DataTypes.INTEGER,
-            primaryKey: true,
-            references:{
-                model: countries,
-                key: 'id_countries'
-            }
-        },
         id_states:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -21,6 +13,14 @@ export const states = sequelize.define(
             validate: {
                 min: 1,
                 max: 999999
+            }
+        },
+        fk_countries_states:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references:{
+                model: countries,
+                key: 'id_countries'
             }
         },
         name:{
@@ -40,9 +40,9 @@ export const states = sequelize.define(
 countries.hasMany(states, {
     foreignKey: 'fk_countries_states',
     sourceKey: 'id_countries',
-  });
-  
-  states.belongsTo(countries, {
+});
+
+states.belongsTo(countries, {
     foreignKey: 'fk_countries_states',
     targetKey: 'id_countries',
-  });
+});

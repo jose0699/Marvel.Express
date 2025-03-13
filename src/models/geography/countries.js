@@ -22,7 +22,7 @@ export const countries = sequelize.define(
             allowNull: false
         },
         continent:{
-            type: DataTypes.CHAR(1),
+            type: DataTypes.CHAR(2),
             allowNull: false
         }
     },
