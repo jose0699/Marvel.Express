@@ -21,6 +21,9 @@ export const users = sequelize.define('users',
         email:{
             type: DataTypes.STRING(256),
             allowNull: false,
+            valida: {
+                isEmail: true,
+            },
             unique: true
         },
         password: {

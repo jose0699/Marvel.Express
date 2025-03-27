@@ -2,21 +2,18 @@ import {app} from './app.js';
 import { sequelize } from './database/bd.js';
 const port = 3000;
 
-
-
-async function main(){
-    try {
-        //Geography
+try {
+    //Geography
         await import ('./models/geography/countries.js');
         await import ('./models/geography/states.js');
         await import ('./models/geography/cities.js');
         await import ('./models/geography/sectors.js');
 
-        //customers
+    //customers
         await import ('./models/customers/users.js');
         await import ('./models/customers/memberships.js');
 
-        //media
+    //media
         await import ('./models/media/persons.js');
         await import ('./models/media/media.js');
         await import ('./models/media/movies.js');
@@ -25,7 +22,7 @@ async function main(){
         await import ('./models/media/awars.js');
         await import ('./models/media/platforms.js');
         
-        //entertainment
+    //entertainment
         await import ('./models/entertainment/colors.js');
         await import ('./models/entertainment/characters.js');
         await import ('./models/entertainment/powers.js');
@@ -34,14 +31,10 @@ async function main(){
         await import ('./models/entertainment/organization.js')
         await import ('./models/entertainment/headquarters.js');
         await import ('./models/entertainment/roles.js');
-
         await sequelize.sync({alter: true});
-        app.listen(port, ()=> {
-            console.log(`Server is listening on port: ${port}`);
-        });
-    } catch (error) {
-        console.log(error);
-    }
+    app.listen(port, ()=> {
+    console.log(`Server is listening on port: ${port}`);
+    });
+} catch (error) {
+    console.log(error);
 }
-
-main();
