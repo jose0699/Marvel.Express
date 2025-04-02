@@ -1,6 +1,7 @@
 import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 import { persons } from './persons.js';
+import { countries } from '../geography/countries.js';
 
 export const media = sequelize.define('media', 
     {
@@ -52,4 +53,7 @@ export const media = sequelize.define('media',
 );
 
 persons.hasMany(media,{ foreignKey: 'fk_persons_media', sourceKey: 'id_persons'});
-media.belongsTo(persons, {foreignKey: 'fk_persons_media', targetKey: 'id_persons'})
+media.belongsTo(persons, {foreignKey: 'fk_persons_media', targetKey: 'id_persons'});
+
+media.belongsToMany(countries, { through: "censorship" });
+countries.belongsToMany(media, { through: "censorship" });

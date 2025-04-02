@@ -9,10 +9,7 @@ try {
         await import ('./models/geography/cities.js');
         await import ('./models/geography/sectors.js');
 
-    //customers
-        await import ('./models/customers/users.js');
-        await import ('./models/customers/memberships.js');
-
+        
     //media
         await import ('./models/media/persons.js');
         await import ('./models/media/media.js');
@@ -22,15 +19,25 @@ try {
         await import ('./models/media/awars.js');
         await import ('./models/media/platforms.js');
         
+    //customers
+        await import ('./models/customers/users.js');
+        await import ('./models/customers/memberships.js');
+        await import ('./models/customers/qualifications.js');
+        await import ('./models/customers/criticism.js');
+        await import ('./models/customers/answers.js');
+        
     //entertainment
         await import ('./models/entertainment/colors.js');
-        await import ('./models/entertainment/characters.js');
         await import ('./models/entertainment/powers.js');
         await import ('./models/entertainment/occupations.js');
         await import ('./models/entertainment/objects.js');
         await import ('./models/entertainment/organization.js')
         await import ('./models/entertainment/headquarters.js');
+        await import ('./models/entertainment/characters.js');
         await import ('./models/entertainment/roles.js');
+        await import ('./models/entertainment/media_organization.js');
+        await import ('./models/entertainment/cast.js');
+        
         await sequelize.sync({alter: true});
     app.listen(port, ()=> {
     console.log(`Server is listening on port: ${port}`);

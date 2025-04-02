@@ -2,6 +2,9 @@ import { DataTypes } from "sequelize";
 import { sequelize } from "../../database/bd.js";
 import { persons } from '../media/persons.js';
 import { colors } from './colors.js';
+import { powers } from './powers.js';
+import { occupations } from './occupations.js';
+import { objects } from './objects.js';
 
 export const characters = sequelize.define('characters',
     {
@@ -84,6 +87,13 @@ export const characters = sequelize.define('characters',
     }
 );
 
+characters.belongsToMany(characters, { 
+    through: "couple",   
+    as: "Partners",      
+    foreignKey: "characterId",  
+    otherKey: "partnerId"        
+});
+
 persons.hasMany(characters, { foreignKey: 'fk_persons', sourceKey: 'id_persons' });
 characters.belongsTo(persons, { foreignKey: 'fk_persons', targetKey: 'id_persons' });
 
@@ -92,3 +102,15 @@ characters.belongsTo(colors, { foreignKey: 'fk_colors_eyes', targetKey: 'id_colo
 
 colors.hasMany(characters, { foreignKey: 'fk_colors_hair', sourceKey: 'id_color' });
 characters.belongsTo(colors, { foreignKey: 'fk_colors_hair', targetKey: 'id_color' });
+
+characters.belongsToMany(colors, {through: "characters_colors"});
+colors.belongsToMany(characters, {through: "characters_colors"});
+
+characters.belongsToMany(powers, {through: "characters_powers"});
+powers.belongsToMany(characters, {through: "characters_powers"});
+
+characters.belongsToMany(occupations, {through: "characters_occupations"});
+occupations.belongsToMany(characters, {through: "characters_occupations"});
+
+characters.belongsToMany(objects, {through: "characters_objects"});
+objects.belongsToMany(characters, {through: "characters_objects"});

@@ -1,4 +1,4 @@
-import { DataTypes, INTEGER } from 'sequelize'
+import { DataTypes } from 'sequelize'
 import {sequelize} from '../../database/bd.js'
 import {users} from './users.js'
 
