@@ -3,8 +3,7 @@ import { sequelize } from "../../database/bd.js";
 import { headquarters } from "./headquarters.js";
 import { characters } from "./characters.js";
 
-export const roles = sequelize.define('roles',
-    {
+export const roles = sequelize.define('roles', {
         id_roles:{
             type: DataTypes.INTEGER,
             primaryKey: true,

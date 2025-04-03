@@ -72,16 +72,5 @@ export const users = sequelize.define('users',
     }
 );
 
-countries.hasMany(users,
-    {
-        foreignKey: 'countries_user',
-        sourceKey: 'id_countries'
-    }
-);
-
-users.belongsTo(countries,
-    {
-        foreignKey: 'countries_user',
-        targetKey: 'id_countries'
-    }
-);
+countries.hasMany(users, { foreignKey: 'countries_user', sourceKey: 'id_countries' });
+users.belongsTo(countries, { foreignKey: 'countries_user', targetKey: 'id_countries' });

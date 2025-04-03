@@ -1,11 +1,8 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../../database/bd.js";
-
 import { countries } from './countries.js'
 
-export const states = sequelize.define(
-    'states',
-    {
+export const states = sequelize.define( 'states', {
         id_states:{
             type: DataTypes.INTEGER,
             primaryKey: true,

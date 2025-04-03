@@ -1,8 +1,7 @@
 import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 
-export const colors = sequelize.define('colors',
-    {
+export const colors = sequelize.define('colors',{
         id_color:{
             type:DataTypes.INTEGER,
             primaryKey:true,

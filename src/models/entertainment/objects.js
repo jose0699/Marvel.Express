@@ -1,8 +1,7 @@
 import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 
-export const objects = sequelize.define('objects',
-    {
+export const objects = sequelize.define('objects', {
         id_objects : {
             type: DataTypes.INTEGER,
             primaryKey: true,

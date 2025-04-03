@@ -1,8 +1,7 @@
 import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 
-export const powers = sequelize.define('powers',
-    {
+export const powers = sequelize.define('powers', {
         id_powers:{
             type:DataTypes.INTEGER,
             primaryKey:true,

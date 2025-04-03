@@ -1,9 +1,7 @@
 import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 
-export const countries = sequelize.define(
-    'countries', 
-    {
+export const countries = sequelize.define( 'countries', {
         id_countries:{
             type: DataTypes.INTEGER,
             autoIncrement:true,

@@ -87,13 +87,6 @@ export const characters = sequelize.define('characters',
     }
 );
 
-characters.belongsToMany(characters, { 
-    through: "couple",   
-    as: "Partners",      
-    foreignKey: "characterId",  
-    otherKey: "partnerId"        
-});
-
 persons.hasMany(characters, { foreignKey: 'fk_persons', sourceKey: 'id_persons' });
 characters.belongsTo(persons, { foreignKey: 'fk_persons', targetKey: 'id_persons' });
 

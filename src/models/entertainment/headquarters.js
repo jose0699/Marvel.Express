@@ -1,10 +1,9 @@
-import { DataTypes, or } from 'sequelize';
+import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 import { organization } from './organization.js';
 import { sectors } from '../geography/sectors.js';
 
-export const headquarters = sequelize.define('headquarters',
-    {
+export const headquarters = sequelize.define('headquarters', {
         id_headquarters:{
             type: DataTypes.INTEGER,
             primaryKey: true,

@@ -2,9 +2,7 @@ import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 import { cities } from './cities.js'
 
-export const sectors = sequelize.define(
-    'sectors', 
-    {   
+export const sectors = sequelize.define( 'sectors', {   
         id_sector:{
             type: DataTypes.INTEGER,
             primaryKey: true,

@@ -2,9 +2,7 @@ import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 import { states } from './states.js';
 
-export const cities = sequelize.define(
-    'cities', 
-    {   
+export const cities = sequelize.define( 'cities', {   
         id_cities:{
             type: DataTypes.INTEGER,
             primaryKey: true,

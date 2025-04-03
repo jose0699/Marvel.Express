@@ -2,8 +2,7 @@ import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 import { media } from './media.js';
 
-export const series = sequelize.define('series',
-    {
+export const series = sequelize.define('series', {
         id_series:{
             type: DataTypes.INTEGER,
             primaryKey: true,

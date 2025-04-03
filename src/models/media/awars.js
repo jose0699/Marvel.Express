@@ -2,8 +2,7 @@ import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 import { video_games } from './video_games.js';
 
-export const awars = sequelize.define('awars',
-    {
+export const awars = sequelize.define('awars', {
         id_awars:{
             type:DataTypes.INTEGER,
             primaryKey:true,

@@ -2,8 +2,7 @@ import { DataTypes } from 'sequelize'
 import {sequelize} from '../../database/bd.js'
 import {users} from './users.js'
 
-export const memberships = sequelize.define('memberships',
-    {
+export const memberships = sequelize.define('memberships',{
         id_memberships:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -37,18 +36,7 @@ export const memberships = sequelize.define('memberships',
         updatedAt: 'updated_at',
         deletedAt: 'deleted_at',   
     }
-)
-
-users.hasMany(memberships, 
-    {
-        foreignKey: 'fk_users_memberships',
-        sourceKey: 'id_users'
-    }
 );
 
-memberships.belongsTo(users, 
-    {
-        foreignKey: 'fk_users_memberships',
-        targetKey: 'id_users'
-    }
-);
+users.hasMany(memberships, { foreignKey: 'fk_users_memberships', sourceKey: 'id_users' });
+memberships.belongsTo(users, { foreignKey: 'fk_users_memberships', targetKey: 'id_users'});
