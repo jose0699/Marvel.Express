@@ -34,15 +34,7 @@ export const users = sequelize.define('users',
             type: DataTypes.STRING(128),
             allowNull: false
         },
-        middle_name: {
-            type: DataTypes.STRING(128),
-            allowNull: true
-        },
-        first_surname: {  
-            type: DataTypes.STRING(128),
-            allowNull: false
-        },
-        second_surname: {  
+        last_name: {  
             type: DataTypes.STRING(128),
             allowNull: true
         },

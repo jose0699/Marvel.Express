@@ -1,5 +1,7 @@
-import {app} from './app.js';
 import { sequelize } from './database/bd.js';
+import { app } from './app.js';
+
+
 const port = 3000;
 
 try {
@@ -14,7 +16,7 @@ try {
         await import ('./models/media/persons.js');
         await import ('./models/media/media.js');
         await import ('./models/media/movies.js');
-        await import ('./models/media/series .js');
+        await import ('./models/media/series.js');
         await import ('./models/media/video_games.js');
         await import ('./models/media/awars.js');
         await import ('./models/media/platforms.js');
@@ -40,7 +42,7 @@ try {
         await import ('./models/entertainment/alias.js');
         await import ('./models/entertainment/relationship.js');
         
-        await sequelize.sync({alter: true});
+        await sequelize.sync({alter: false});
     app.listen(port, ()=> {
     console.log(`Server is listening on port: ${port}`);
     });

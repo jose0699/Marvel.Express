@@ -1,5 +1,5 @@
-import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
+import { DataTypes } from 'sequelize';
 import { media } from './media.js';
 
 export const series = sequelize.define('series', {
@@ -23,10 +23,6 @@ export const series = sequelize.define('series', {
         fk_media_series:{
             type: DataTypes.INTEGER,
             allowNull: false,
-            references:{
-                model: media,
-                key: 'id_media'
-            }
         }
     },
     {
