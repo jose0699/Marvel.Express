@@ -9,7 +9,7 @@ export const video_games = sequelize.define('video_games', {
             autoIncrement: true
         },
         category:{
-            type: DataTypes.CHAR(2),
+            type: DataTypes.STRING(128),
             allowNull: false
         },
         publisher:{

@@ -1,5 +1,4 @@
 import { checkSchema, validationResult } from 'express-validator';
-import { format } from 'sequelize/lib/utils';
 
 const user_schame = {
     users_name:{
