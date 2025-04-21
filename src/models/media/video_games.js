@@ -2,6 +2,9 @@ import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
 import { media } from './media.js';
 
+
+
+
 export const video_games = sequelize.define('video_games', {
         id_video_games:{
             type: DataTypes.INTEGER(),

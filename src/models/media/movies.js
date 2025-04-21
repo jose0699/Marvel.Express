@@ -24,7 +24,7 @@ export const movies = sequelize.define('movies', {
             type: DataTypes.FLOAT,
             allowNull: false
         },
-        categoria:{
+        category:{
             type: DataTypes.CHAR(2),
             allowNull: false
         },

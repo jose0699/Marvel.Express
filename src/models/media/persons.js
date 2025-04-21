@@ -11,18 +11,10 @@ export const persons = sequelize.define('persons', {
             type: DataTypes.STRING(128),
             allowNull: false
         },
-        middle_name: {
-            type: DataTypes.STRING(128),
-            allowNull: true
-        },
-        first_surname: {  
+        last_name: {  
             type: DataTypes.STRING(128),
             allowNull: false
         },
-        second_surname: {  
-            type: DataTypes.STRING(128),
-            allowNull: true
-        }
     },
     {
         paranoid: true,
