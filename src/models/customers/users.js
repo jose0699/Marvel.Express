@@ -27,7 +27,7 @@ export const users = sequelize.define('users',
             unique: true
         },
         password: {
-            type: DataTypes.STRING(256),
+            type: DataTypes.STRING(512),
             allowNull: false
         },
         first_name: {  
@@ -39,7 +39,7 @@ export const users = sequelize.define('users',
             allowNull: true
         },
         birthdate:{
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false
         },
         gender:{
