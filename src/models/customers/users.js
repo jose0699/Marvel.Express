@@ -46,6 +46,15 @@ export const users = sequelize.define('users',
             type: DataTypes.CHAR(1),
             allowNull: false
         },
+        permission:{
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1,
+            validate:{
+                min: 1,
+                max: 3
+            }
+        },
         countries_user:{
             type: DataTypes.INTEGER,
             allowNull: false,

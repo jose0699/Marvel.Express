@@ -22,10 +22,8 @@ try {
         
     //customers
         await import ('./models/customers/users.js');
-        await import ('./models/customers/memberships.js');
         await import ('./models/customers/qualifications.js');
         await import ('./models/customers/criticism.js');
-        await import ('./models/customers/answers.js');
         
     //entertainment
         await import ('./models/entertainment/colors.js');

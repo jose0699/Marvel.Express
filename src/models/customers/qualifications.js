@@ -1,15 +1,16 @@
-import { sequelize } from '../../database/bd.js';
 import { DataTypes } from 'sequelize';
-import { memberships } from "./memberships.js";
+import { sequelize } from '../../database/bd.js';
+import { users } from './users.js';
 import { media } from "../media/media.js";
 
+
 export const qualifications = sequelize.define('qualifications', {
-        fk_memberships_qualifications: {
+        fk_users_qualifications: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             references: {
-                model: memberships,
-                key: 'id_memberships'
+                model: users,
+                key: 'id_users'
             }
         },
         fk_media_qualifications: {

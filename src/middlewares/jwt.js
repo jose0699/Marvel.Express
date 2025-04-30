@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 class Token {
-    async generate_token(uid, user) {
+    async generate_token(uid, user, permission) {
         try {
             const secretKey = process.env.SECRET;
 
@@ -20,7 +20,7 @@ class Token {
             }
 
             return jwt.sign(
-                { id: uid, name: user },
+                { id: uid, name: user, permission: permission },
                 secretKey,                          
                 { expiresIn: '1h' }  
             );
