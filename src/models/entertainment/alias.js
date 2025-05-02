@@ -1,15 +1,12 @@
 import {sequelize} from '../../database/bd.js';
 import { DataTypes} from 'sequelize';
-import {characters} from './characters.js';
 
-export const alias = sequelize.define('alias', {
+export const alias = sequelize.define(
+    'alias', 
+    {
         id_characters_alias:{
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            references: {
-                model: characters,
-                key: 'id_characters'
-            }
+            primaryKey: true
         },
         uid:{
             type: DataTypes.INTEGER,

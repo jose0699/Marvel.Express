@@ -1,23 +1,16 @@
 import {sequelize} from '../../database/bd.js';
 import { DataTypes} from 'sequelize';
-import { characters } from "./characters.js";
 
-export const relationship = sequelize.define('relationship', {
+export const relationship = sequelize.define(
+    'relationship', 
+    {
         id_characters_relationship_one:{
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            references: {
-                model: characters,
-                key: 'id_characters'
-            }
+            primaryKey: true
         },
         id_characters_relationship_two:{
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            references: {
-                model: characters,
-                key: 'id_characters'
-            }
+            primaryKey: true
         },
         type:{
             type: DataTypes.CHAR(2),

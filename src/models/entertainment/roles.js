@@ -1,9 +1,9 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../../database/bd.js";
-import { headquarters } from "./headquarters.js";
-import { characters } from "./characters.js";
 
-export const roles = sequelize.define('roles', {
+export const roles = sequelize.define(
+    'roles', 
+    {
         id_roles:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -23,19 +23,11 @@ export const roles = sequelize.define('roles', {
         },
         fk_headquarters_roles:{
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                model: headquarters,
-                key: 'id_headquarters'
-            }
+            allowNull: false
         },
         fk_characters_roles:{
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                model: characters,
-                key: 'id_characters'
-            }
+            allowNull: false
         }
     },
     {
@@ -45,12 +37,4 @@ export const roles = sequelize.define('roles', {
         updatedAt: 'updated_at',
         deletedAt: 'deleted_at',   
     }
-)
-
-headquarters.hasMany(roles, {foreignKey: 'fk_headquarters_roles', sourceKey: 'id_headquarters'});
-roles.belongsTo(headquarters, {foreignKey: 'fk_headquarters_roles', targetKey: 'id_headquarters'});
-
-
-characters.hasMany(roles, {foreignKey: 'fk_characters_roles', sourceKey: 'id_characters'});
-roles.belongsTo(characters, {foreignKey: 'fk_characters_roles', targetKey: 'id_characters'});
-
+);

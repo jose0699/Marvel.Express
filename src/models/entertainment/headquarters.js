@@ -1,9 +1,9 @@
 import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
-import { organization } from './organization.js';
-import { sectors } from '../geography/sectors.js';
 
-export const headquarters = sequelize.define('headquarters', {
+export const headquarters = sequelize.define(
+    'headquarters', 
+    {
         id_headquarters:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -23,19 +23,11 @@ export const headquarters = sequelize.define('headquarters', {
         },
         fk_organization_headquarters:{
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                model: organization,
-                key: 'id_organization'
-            }
+            allowNull: false
         },
         fk_sectors_headquarters:{
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                model: sectors,
-                key: 'id_sector'
-            }
+            allowNull: false
         }
     },
     {
@@ -45,10 +37,4 @@ export const headquarters = sequelize.define('headquarters', {
         updatedAt: 'updated_at',
         deletedAt: 'deleted_at',   
     }
-)
-
-organization.hasMany(headquarters, {foreignKey:'fk_organization_headquarters', sourceKey:'id_organization'});
-headquarters.belongsTo(organization, {foreignKey:'fk_organization_headquarters', targetKey:'id_organization'});
-
-sectors.hasMany(headquarters, {foreignKey:'fk_sectors_headquarters', sourceKey:'id_sector'});
-headquarters.belongsTo(sectors, {foreignKey:'fk_sectors_headquarters', targetKey:'id_sector'});
+);

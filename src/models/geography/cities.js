@@ -1,8 +1,9 @@
 import { DataTypes } from 'sequelize';
 import {sequelize} from '../../database/bd.js';
-import { states } from './states.js';
 
-export const cities = sequelize.define( 'cities', {   
+export const cities = sequelize.define( 
+    'cities', 
+    {   
         id_cities:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -14,11 +15,7 @@ export const cities = sequelize.define( 'cities', {
         },
         fk_states_cities:{
             type: DataTypes.INTEGER,
-            allowNull:false,
-            references:{
-                model: states,
-                key: 'id_states'
-            }
+            allowNull:false
         },
         name: {
             type: DataTypes.STRING(256),
@@ -35,14 +32,4 @@ export const cities = sequelize.define( 'cities', {
 );
 
 
-states.hasMany(cities, {
-    foreignKey: 'fk_states_cities',
-    sourceKey: 'id_states',
-});
-cities.belongsTo(
-    states,
-    {
-        foreignKey: 'fk_states_cities',
-        targetKey: 'id_states'
-    }
-)
+

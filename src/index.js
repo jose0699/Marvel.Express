@@ -38,6 +38,9 @@ try {
         await import ('./models/entertainment/cast.js');
         await import ('./models/entertainment/alias.js');
         await import ('./models/entertainment/relationship.js');
+    
+    //Associations
+        await import ('./models/associations.js');
         
         await sequelize.sync({alter: false});
     app.listen(port, ()=> {

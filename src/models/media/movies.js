@@ -1,8 +1,9 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../../database/bd.js";
-import { media } from "./media.js";
 
-export const movies = sequelize.define('movies', {
+export const movies = sequelize.define(
+    'movies', 
+    {
         id_movies:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -30,11 +31,7 @@ export const movies = sequelize.define('movies', {
         },
         fk_media_movies:{
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references:{
-                model: media,
-                key: 'id_media'
-            }
+            allowNull: false
         }
     },
     {
@@ -44,7 +41,4 @@ export const movies = sequelize.define('movies', {
         updatedAt: 'updated_at',
         deletedAt: 'deleted_at',   
     }
-)
-
-media.hasMany(movies, {foreignKey:'fk_media_movies', sourceKey:'id_media'});
-movies.belongsTo(media, {foreignKey:'fk_media_movies', targetKey:'id_media'});
+);

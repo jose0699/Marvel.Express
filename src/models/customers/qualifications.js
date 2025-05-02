@@ -1,25 +1,16 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../../database/bd.js';
-import { users } from './users.js';
-import { media } from "../media/media.js";
 
-
-export const qualifications = sequelize.define('qualifications', {
+export const qualifications = sequelize.define(
+    'qualifications', 
+    {
         fk_users_qualifications: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            references: {
-                model: users,
-                key: 'id_users'
-            }
+            primaryKey: true
         },
         fk_media_qualifications: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            references: {
-                model: media,
-                key: 'id_media'
-            }
+            primaryKey: true
         },
         punctuation: {
             type: DataTypes.INTEGER,

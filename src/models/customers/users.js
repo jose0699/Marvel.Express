@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../../database/bd.js';
-import { countries } from '../geography/countries.js';
 
-export const users = sequelize.define('users',
+export const users = sequelize.define(
+    'users',
     {
         id_users:{
             type: DataTypes.INTEGER,
@@ -15,16 +15,16 @@ export const users = sequelize.define('users',
         },
         users_name:{
             type: DataTypes.STRING(16),
-            unique: true,
-            allowNull: false
+            allowNull: false,
+            unique: true
         },
         email:{
             type: DataTypes.STRING(256),
             allowNull: false,
+            unique: true,
             valida: {
                 isEmail: true,
-            },
-            unique: true
+            }
         },
         password: {
             type: DataTypes.STRING(512),
@@ -57,11 +57,7 @@ export const users = sequelize.define('users',
         },
         countries_user:{
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: countries,
-                key: 'id_countries'
-            }
+            allowNull: false
         }
     },
     {
@@ -72,6 +68,3 @@ export const users = sequelize.define('users',
         deletedAt: 'deleted_at',   
     }
 );
-
-countries.hasMany(users, { foreignKey: 'countries_user', sourceKey: 'id_countries' });
-users.belongsTo(countries, { foreignKey: 'countries_user', targetKey: 'id_countries' });

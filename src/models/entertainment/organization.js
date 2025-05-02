@@ -1,7 +1,9 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../../database/bd.js";
 
-export const organization = sequelize.define('organization', {
+export const organization = sequelize.define(
+    'organization', 
+    {
         id_organization:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -35,4 +37,4 @@ export const organization = sequelize.define('organization', {
         updatedAt: 'updated_at',
         deletedAt: 'deleted_at',   
     }
-)
+);

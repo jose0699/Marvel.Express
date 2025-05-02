@@ -1,24 +1,16 @@
 import {sequelize} from '../../database/bd.js';
 import {DataTypes} from 'sequelize';
-import { organization } from './organization.js';
-import { media } from '../media/media.js';
 
-export const media_organization = sequelize.define('media_organization', {
+export const media_organization = sequelize.define(
+    'media_organization', 
+    {
         fk_organization:{
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            references: {
-                model: organization,
-                key: 'id_organization'
-            }
+            primaryKey: true
         },
         fk_media:{
             type: DataTypes.INTEGER,
-            primaryKey: true,
-            references: {
-                model: media,
-                key: 'id_media'
-            }
+            primaryKey: true
         },
         leadership:{
             type: DataTypes.CHAR(2),
