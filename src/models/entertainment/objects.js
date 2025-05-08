@@ -18,12 +18,25 @@ export const objects = sequelize.define(
             allowNull: false
         },
         category: {
-            type: DataTypes.CHAR(3),
+            /*
+                WE: weapon
+                TE: technology
+                MA: magical
+                CO: cosmic
+                VE: Vehicles
+                SS: special suit
+            */ 
+            type: DataTypes.CHAR(2),
             allowNull: false
         },
         description:{
             type: DataTypes.STRING(512),
             allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

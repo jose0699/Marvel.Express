@@ -18,12 +18,19 @@ export const cast = sequelize.define(
         },
         type_role:{
             type: DataTypes.CHAR(2),
-            allowNull: false
+            allowNull: true, 
+            defaultValue: null
         },
         type_actor:{
             type: DataTypes.CHAR(2),
-            allowNull: false
+            allowNull: true,
+            defaultValue: null
         },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
+        }
     },
     {
         paranoid: true,

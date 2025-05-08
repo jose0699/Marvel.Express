@@ -19,6 +19,11 @@ export const media_organization = sequelize.define(
         type:{
             type: DataTypes.STRING(500),
             allowNull: true
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

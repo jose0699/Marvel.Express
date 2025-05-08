@@ -9,7 +9,7 @@ export const criticism = sequelize.define(
             primaryKey: true,
             autoIncrement: true
         },
-        fk_memberships_criticism:{
+        fk_users_criticism:{
             type: DataTypes.INTEGER,
             primaryKey: true
         },
@@ -24,18 +24,24 @@ export const criticism = sequelize.define(
         },
         description:{
             type: DataTypes.STRING(512),
-            allowNull: false
+            allowNull: false,
+            defaultValue: null
         },
         reaction:{
+            // 1: like, 2: dislike, 3: love, 4: hate, 5: funny, 6: sad, 7: angry
             type: DataTypes.INTEGER,
-            validate:{
-                min: 1,
-                max: 7,
-            }
+            allowNull: true,
+            defaultValue: null
         },
         fk_criticim:{
             type: DataTypes.INTEGER,
             allowNull: true,
+            defaultValue: null
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

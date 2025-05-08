@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "jose0699",
+    "database": "marvel.express",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "jose0699",
+    "database": "marvel.express",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "jose0699",
+    "database": "marvel.express",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

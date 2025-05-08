@@ -16,6 +16,11 @@ export const alias = sequelize.define(
         name:{
             type: DataTypes.STRING(50),
             allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

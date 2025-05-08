@@ -13,13 +13,15 @@ export const qualifications = sequelize.define(
             primaryKey: true
         },
         punctuation: {
+            // validate 1 - 5
             type: DataTypes.INTEGER,
             allowNull: false,
-            validate: {
-                min: 1,
-                max: 5
-            }
         },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
+        }
     }, 
     {
         paranoid: true,

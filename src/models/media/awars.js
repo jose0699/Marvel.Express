@@ -17,9 +17,14 @@ export const awars = sequelize.define(
             type:DataTypes.STRING(256),
             allowNull: false
         },
-        fk_video_games_awars: {
+        fk_media_awars: {
             type: DataTypes.INTEGER(),
             allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

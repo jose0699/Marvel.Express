@@ -17,6 +17,11 @@ export const persons = sequelize.define(
             type: DataTypes.STRING(128),
             allowNull: false
         },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
+        }
     },
     {
         paranoid: true,

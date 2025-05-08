@@ -16,10 +16,16 @@ export const relationship = sequelize.define(
             type: DataTypes.CHAR(2),
             allowNull: false
         },
-        status:{
-            type: DataTypes.CHAR(1),
-            allowNull: false
+        status_relationship:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false
         },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
+        }
     },
     {
         paranoid: true,

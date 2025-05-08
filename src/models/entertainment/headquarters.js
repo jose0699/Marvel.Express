@@ -4,6 +4,10 @@ import {sequelize} from '../../database/bd.js';
 export const headquarters = sequelize.define(
     'headquarters', 
     {
+        fk_organization_headquarters:{
+            type: DataTypes.INTEGER,
+            primaryKey: true
+        },
         id_headquarters:{
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -14,20 +18,42 @@ export const headquarters = sequelize.define(
             allowNull: false
         },
         edification:{
-            type: DataTypes.CHAR(2),
+            /*  
+              SFH:  Single-family home 
+              TFH: Two-family home 
+              LB: low building
+              MB: Medium building 
+              HD: height difficulty 
+              SK: skyscraper 
+            */
+            type: DataTypes.CHAR(3),
             allowNull: false
         },
         origin:{
             type: DataTypes.BOOLEAN,
-            allowNull: true
+            allowNull: true,
+            defaultValue: false
         },
-        fk_organization_headquarters:{
+        fk_sectors_countries_headquarters:{
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        fk_sectors_headquarters:{
+        fk_sectors_states_headquarters:{
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        fk_sectors_cities_headquarters:{
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        fk_sectors_id_headquarters:{
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

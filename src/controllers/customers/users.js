@@ -1,7 +1,7 @@
 import { users } from '../../models/customers/users.js';
 import { countries } from '../../models/geography/countries.js';
 import bcrypt from 'bcrypt';
-import Token from '../../middlewares/jwt.js'
+import Token from '../../services/jwt.js'
 const saltRounds = 12;  
 
 async function hash_password(password) {

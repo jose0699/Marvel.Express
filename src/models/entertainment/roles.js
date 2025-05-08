@@ -28,6 +28,11 @@ export const roles = sequelize.define(
         fk_characters_roles:{
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

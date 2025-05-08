@@ -20,6 +20,11 @@ export const states = sequelize.define(
         name:{
             type: DataTypes.STRING(256),
             allowNull:false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

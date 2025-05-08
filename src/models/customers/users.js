@@ -7,11 +7,7 @@ export const users = sequelize.define(
         id_users:{
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true,
-            validate:{
-                min: 1,
-                max: 999999
-            },            
+            autoIncrement: true           
         },
         users_name:{
             type: DataTypes.STRING(16),
@@ -43,21 +39,25 @@ export const users = sequelize.define(
             allowNull: false
         },
         gender:{
+            // F: femenine M: masculine O: other
             type: DataTypes.CHAR(1),
-            allowNull: false
+            allowNull: false,
+            defaultValue: 'O',
         },
         permission:{
+            // 1: user, 2: moderator, 3: admin
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 1,
-            validate:{
-                min: 1,
-                max: 3
-            }
         },
         countries_user:{
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

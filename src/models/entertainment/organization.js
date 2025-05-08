@@ -18,6 +18,15 @@ export const organization = sequelize.define(
             allowNull: false
         },
         category:{
+            /*
+                CO: Company
+                ST: State
+                CR: Criminal
+                PR: Private
+                GO: Government
+                NG: Non-Governmental
+                IN: International
+            */
             type: DataTypes.CHAR(2),
             allowNull: false
         },
@@ -26,8 +35,13 @@ export const organization = sequelize.define(
             allowNull: false
         },
         appearance:{
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

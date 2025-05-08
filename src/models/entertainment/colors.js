@@ -12,6 +12,11 @@ export const colors = sequelize.define(
         description: {
             type:DataTypes.STRING(256),
             allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

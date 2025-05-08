@@ -17,7 +17,8 @@ export const characters = sequelize.define(
             type: DataTypes.STRING(128),
             allowNull: false
         },
-        gender: {  
+        gender: { 
+            // f: femine, m: masculine, o: other
             type: DataTypes.CHAR(1),
             allowNull: false
         },
@@ -33,11 +34,8 @@ export const characters = sequelize.define(
             type: DataTypes.STRING(256),
             allowNull: true
         },
-        marital_status: {
-            type: DataTypes.CHAR(1),
-            allowNull: false
-        },
         category: {
+            // S: Superhero, V: Villain, A: Antihero, C: civil
             type: DataTypes.CHAR(1),
             allowNull: false
         },
@@ -52,6 +50,10 @@ export const characters = sequelize.define(
         fk_colors_hair: {  
             type: DataTypes.INTEGER,
             allowNull: false
+        },status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {

@@ -24,6 +24,11 @@ export const countries = sequelize.define(
         continent:{
             type: DataTypes.CHAR(2),
             allowNull: false
+        },
+        status:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true
         }
     },
     {
